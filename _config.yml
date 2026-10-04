@@ -78,9 +78,13 @@ per_page: 10
 pagination_dir: page
 
 # Include / Exclude file(s)
+## 忽略 macOS 自动生成的 .DS_Store，避免它被复制到网站上
+## .nojekyll：告诉 GitHub Pages 不要用 Jekyll 处理本网站（Hexo 产物必须加，否则可能样式错乱）
 include:
+  - ".nojekyll"
 exclude:
 ignore:
+  - "**/.DS_Store"
 
 # Extensions
 ## Theme: https://hexo.io/themes/
