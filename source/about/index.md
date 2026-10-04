@@ -16,6 +16,4 @@ date: 2026-10-02 10:00:00
 ## 联系我
 
 - GitHub：<https://github.com/muchuanyang>
-- 博客：<https://muchuanyang.github.io>
-
-> 这个页面在 `source/about/index.md`，你可以直接改成自己的自我介绍。
+- 博客：<https://muchuanyang.github.io/mcy.github.io/>
