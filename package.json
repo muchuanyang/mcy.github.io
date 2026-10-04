@@ -11,7 +11,7 @@
     "publish": "hexo clean && hexo generate --deploy"
   },
   "hexo": {
-    "version": "8.0.0"
+    "version": "8.1.2"
   },
   "dependencies": {
     "hexo": "^8.0.0",
