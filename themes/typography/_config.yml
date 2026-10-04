@@ -1,0 +1,26 @@
+title_primary: "木川羊的博客"   # 网页里字号较大的主标题
+title_secondary: "记录思考成长" # 网页里字号较小的副标题
+author: 木川羊                  # 页脚与 meta 里显示的作者名
+keywords: 木川羊,博客,随笔,记录,思考,成长
+
+# 社交账号（不需要的留空即可自动隐藏图标）
+twitter:            # 用户名
+rss: atom.xml
+weibo:              # 用户名/id
+instagram:          # 用户名
+github: muchuanyang # 用户名，会生成 https://github.com/muchuanyang 链接
+
+# 评论服务（二选一，另一个留空；暂时都不开就都留空）
+livere:    # livere.com 上的 data-uid
+disqus:    # disqus.com 上的 short_name
+dove:      # 设为 true 可“关闭”评论
+
+# 是否显示翻页页码
+showPageCount: true
+
+# 是否在文章标题后显示分类 / 标签
+showCategories: false
+showTags: true
+
+# 配色方案：light / dark
+themeStyle: light
