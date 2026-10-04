@@ -155,11 +155,23 @@ keywords: 木川羊,博客,随笔,读书笔记,复盘
 
 ### 第 2 步：把本地源码推上去
 
-在本工程目录（`muchuanyang.github.io/`）打开终端，依次执行：
+> **当前状态：本地已经准备好了。** 仓库已初始化、身份已配置、远程地址已指向
+> `muchuanyang/muchuanyang.github.io`，三次提交也已完成。所以**你只需要执行最后一条 `git push`**。
+> 把完整流程也列在下面，以后换电脑重来时可照抄。
+
+在本工程目录（`muchuanyang.github.io/`）打开终端：
+
+```bash
+git push -u origin main
+```
+
+完整流程（**这次不用做**，仅备用）：
 
 ```bash
 git init -b main
-git add .
+git config user.name "muchuanyang"
+git config user.email "muchuanyang@users.noreply.github.com"
+git add -A
 git commit -m "init: 木川羊的博客"
 git remote add origin https://github.com/muchuanyang/muchuanyang.github.io.git
 git push -u origin main
@@ -221,6 +233,17 @@ A：GitHub Pages 有 1–2 分钟缓存，稍等；仍不行就检查第 4 步�
 
 **Q：`public/`、`node_modules/` 要不要提交到 Git？**
 A：不用，`.gitignore` 已经排除（网站内容通过 `hexo deploy` 自动推送到 `gh-pages` 分支）。
+
+**Q：怎么确认主题文件真的被提交了？**
+A：执行 `git ls-files themes/ | wc -l`，正常应输出 60 左右。**如果输出是 1**，说明主题被 Git 误当成「子模块」了，
+原因是 `git clone` 主题时带进来的 `themes/typography/.git` 目录。解决办法：
+
+```bash
+rm -rf themes/typography/.git
+git rm -r --cached themes/typography
+git add themes/typography
+git commit -m "fix: 把主题作为普通文件纳入版本管理"
+```
 
 ---
 
