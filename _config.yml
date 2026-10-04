@@ -11,9 +11,10 @@ language: zh-cn
 timezone: Asia/Shanghai
 
 # URL
-## 上线后你的博客地址就是 https://muchuanyang.github.io
-url: https://muchuanyang.github.io
-root: /
+## 本博客部署在 mcy.github.io 这个「项目仓库」，所以网址带一层路径
+## 上线后地址为 https://muchuanyang.github.io/mcy.github.io/
+url: https://muchuanyang.github.io/mcy.github.io
+root: /mcy.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -116,5 +117,5 @@ feed:
 ## 一条命令 hexo deploy 会把生成好的网站推到仓库的 gh-pages 分支
 deploy:
   type: git
-  repo: https://github.com/muchuanyang/muchuanyang.github.io.git
+  repo: https://github.com/muchuanyang/mcy.github.io.git
   branch: gh-pages

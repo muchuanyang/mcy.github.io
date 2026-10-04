@@ -1,13 +1,20 @@
-<!-- 本博客基于 Hexo + Typography 主题搭建，源码保存在 GitHub 仓库 muchuanyang/muchuanyang.github.io -->
+<!-- 本博客基于 Hexo + Typography 主题搭建，源码保存在 GitHub 仓库 muchuanyang/mcy.github.io -->
 
 # 木川羊的博客
 
 个人博客，基于 **Hexo 8** + **Typography 主题**（参考 <https://polebug.github.io/archives/> 的风格）。
 写完 Markdown 文章，一条命令自动生成网页并发布到 GitHub Pages。
 
-- **线上地址**：<https://muchuanyang.github.io>
-- **仓库地址**：<https://github.com/muchuanyang/muchuanyang.github.io>
+- **线上地址**：<https://muchuanyang.github.io/mcy.github.io/>
+- **仓库地址**：<https://github.com/muchuanyang/mcy.github.io>
 - **文章目录**：`source/_posts/`
+
+> **为什么网址里多了一层 `/mcy.github.io/`？**
+> GitHub 的规则是：只有仓库名**恰好等于「用户名 + .github.io」**时，博客才落在根路径。
+> 本项目用的是普通仓库 `mcy.github.io`，所以地址是 `https://muchuanyang.github.io/mcy.github.io/`，
+> 功能完全一样，只是地址长一点。
+> **如果以后想换成根路径地址**：新建一个名为 `muchuanyang.github.io` 的仓库，把远程地址换过去，
+> 并同时把 `_config.yml` 里的 `url` 改成 `https://muchuanyang.github.io`、`root` 改成 `/`（**两者必须一起改，否则样式和图片会 404**）。
 
 ---
 
@@ -148,15 +155,15 @@ keywords: 木川羊,博客,随笔,读书笔记,复盘
 ### 第 1 步：在 GitHub 建仓库
 
 1. 打开 <https://github.com/new>
-2. **Repository name** 填：`muchuanyang.github.io`（**必须一字不差**，这决定了你的网址）
-3. 可见性选 **Public**（免费版 Pages 需要 Public）
-4. **不要**勾选 "Add a README file"、不要选 .gitignore、不要选 license（保持空仓库）
+2. **Repository name** 填：`mcy.github.io`
+3. 可见性**必须选 Public** —— ⚠️ 免费版 GitHub Pages **无法发布私有仓库**，这是「上传了但网站打不开」最常见的原因
+4. 仓库有没有旧内容都无所谓，下一步推送会**完整覆盖**它
 5. 点 **Create repository**
 
 ### 第 2 步：把本地源码推上去
 
 > **当前状态：本地已经准备好了。** 仓库已初始化、身份已配置、远程地址已指向
-> `muchuanyang/muchuanyang.github.io`，三次提交也已完成。所以**你只需要执行最后一条 `git push`**。
+> `muchuanyang/mcy.github.io`，提交也已完成。所以**你只需要执行最后一条 `git push`**。
 > 把完整流程也列在下面，以后换电脑重来时可照抄。
 
 在本工程目录（`muchuanyang.github.io/`）打开终端：
@@ -173,7 +180,7 @@ git config user.name "muchuanyang"
 git config user.email "muchuanyang@users.noreply.github.com"
 git add -A
 git commit -m "init: 木川羊的博客"
-git remote add origin https://github.com/muchuanyang/muchuanyang.github.io.git
+git remote add origin https://github.com/muchuanyang/mcy.github.io.git
 git push -u origin main
 ```
 
@@ -194,7 +201,7 @@ npx hexo clean && npx hexo generate --deploy
 1. 打开仓库 → **Settings** → 左侧 **Pages**
 2. **Source** 选 **Deploy from a branch**
 3. **Branch** 选 **`gh-pages`**，目录选 **`/ (root)`**，点 **Save**
-4. 等 1–2 分钟，访问 <https://muchuanyang.github.io> ✅
+4. 等 1–2 分钟，访问 <https://muchuanyang.github.io/mcy.github.io/> ✅
 
 > 如果短时间打不开，是还在部署，再等几分钟。
 
@@ -244,6 +251,9 @@ git rm -r --cached themes/typography
 git add themes/typography
 git commit -m "fix: 把主题作为普通文件纳入版本管理"
 ```
+
+**Q：上线后打开是一片空白 / 样式全丢？**
+A：两种可能。① 仓库是 **Private** —— 免费版 Pages 发不出私有仓库，去 Settings → General → 拉到底 Danger Zone → Change visibility 改成 **Public**。② `_config.yml` 里的 `url` / `root` 和仓库名不匹配 —— 本项目部署在 `mcy.github.io`，所以必须是 `url: https://muchuanyang.github.io/mcy.github.io` 搭配 `root: /mcy.github.io/`，两个要一起改。
 
 ---
 
