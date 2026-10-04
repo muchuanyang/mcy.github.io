@@ -105,7 +105,7 @@ tags:
 npx hexo clean && npx hexo generate --deploy
 ```
 
-这条命令会「生成网站 → 推送到线上」。**等一两分钟**再刷新 <https://muchuanyang.github.io> 即可看到更新。
+这条命令会「生成网站 → 推送到线上」。**等一两分钟**再刷新 <https://muchuanyang.github.io/mcy.github.io/> 即可看到更新。
 
 ---
 
